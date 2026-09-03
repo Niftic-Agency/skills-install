@@ -5,7 +5,7 @@ Public bootstrap for **[Niftic-Agency/niftic-skills](https://github.com/Niftic-A
 Teammates run:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Niftic-Agency/skills-install/main/install.sh | bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Niftic-Agency/skills-install/main/install.sh)"
 ```
 
 The script installs [GitHub CLI](https://cli.github.com/) and Node.js 20+ via Homebrew if they are missing, opens a browser so you can sign in to GitHub, then clones `niftic-skills` into `~/.niftic/skills` and links every skill into each AI tool it finds. A `niftic-skills` command lands in `~/.local/bin`.

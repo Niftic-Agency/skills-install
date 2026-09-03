@@ -2,7 +2,7 @@
 # Niftic skills installer — public bootstrap for the private niftic-skills repo.
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/Niftic-Agency/skills-install/main/install.sh | bash
+#   bash -c "$(curl -fsSL https://raw.githubusercontent.com/Niftic-Agency/skills-install/main/install.sh)"
 #
 # What it does:
 #   1. Installs GitHub CLI (gh) and Node.js 20+ via Homebrew on macOS if missing.
@@ -14,11 +14,6 @@ set -euo pipefail
 
 REPO="Niftic-Agency/niftic-skills"
 CHECKOUT="$HOME/.niftic/skills"
-
-# Route interactive prompts (gh auth login) to the terminal when piped from curl.
-if [ ! -t 0 ] && [ -e /dev/tty ]; then
-  exec < /dev/tty
-fi
 
 log() { printf '\033[1;34m»\033[0m %s\n' "$*"; }
 ok()  { printf '\033[1;32m✓\033[0m %s\n' "$*"; }
