@@ -64,7 +64,7 @@ ensure_checkout() {
   if [ -e "$CHECKOUT" ]; then
     die "$CHECKOUT exists but isn't a git checkout. Move it aside and re-run."
   fi
-  log "cloning $REPO → $CHECKOUT…"
+  log "cloning ${REPO} → ${CHECKOUT}…"
   mkdir -p "$(dirname "$CHECKOUT")"
   gh repo clone "$REPO" "$CHECKOUT" -- --quiet
   ok "cloned"
